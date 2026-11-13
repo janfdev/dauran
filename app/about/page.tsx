@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowUpRight, Target, ShieldCheck, Users, BarChart3, Globe2 } from "lucide-react"
+import { AnimatedCounter } from "@/components/animated-counter"
 
 export const metadata: Metadata = {
   title: "Tentang Kami — Dauran",
@@ -56,17 +57,23 @@ export default function AboutPage() {
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3 font-mono">
           <div className="rounded-xl border border-[var(--line)] bg-[#0b241c] p-6">
             <span className="text-[10px] uppercase text-[var(--muted)]">Timbunan Sampah Nasional</span>
-            <p className="mt-2 text-2xl font-bold text-[var(--ink)]">70,2 Juta Ton</p>
+            <p className="mt-2 text-2xl font-bold text-[var(--ink)]">
+              <AnimatedCounter value={70.2} decimals={1} suffix=" Juta Ton" />
+            </p>
             <span className="text-xs text-rose-400">Per tahun di Indonesia</span>
           </div>
           <div className="rounded-xl border border-[var(--line)] bg-[#0b241c] p-6">
             <span className="text-[10px] uppercase text-[var(--muted)]">Tercampur Tanpa Olah</span>
-            <p className="mt-2 text-2xl font-bold text-amber-400">65,8%</p>
+            <p className="mt-2 text-2xl font-bold text-amber-400">
+              <AnimatedCounter value={65.8} decimals={1} suffix="%" />
+            </p>
             <span className="text-xs text-[var(--muted)]">Langsung ke timbunan TPA</span>
           </div>
           <div className="rounded-xl border border-[var(--line)] bg-[#0b241c] p-6">
             <span className="text-[10px] uppercase text-[var(--muted)]">Target Dauran 2030</span>
-            <p className="mt-2 text-2xl font-bold text-[var(--accent)]">0% TPA</p>
+            <p className="mt-2 text-2xl font-bold text-[var(--accent)]">
+              <AnimatedCounter value={0} suffix="% TPA" />
+            </p>
             <span className="text-xs text-emerald-400">Closed-Loop Desentralisasi</span>
           </div>
         </div>

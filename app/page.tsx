@@ -2,6 +2,7 @@ import Link from "next/link"
 import { ArrowUpRight, ArrowDown, ShieldCheck, Cpu, RefreshCw, Box, Trees, Sparkles } from "lucide-react"
 import { ThreeSpecimenViewer } from "@/components/three-specimen"
 import { AnatomyRig } from "@/components/anatomy-rig"
+import { AnimatedCounter } from "@/components/animated-counter"
 
 export default function HomePage() {
   return (
@@ -46,22 +47,30 @@ export default function HomePage() {
           <div className="grid grid-cols-2 gap-4 text-left sm:grid-cols-4 font-mono">
             <div>
               <span className="text-[10px] uppercase text-[var(--muted)]">Limbah Terkelola</span>
-              <p className="text-xl font-bold text-[var(--ink)]">48.200 kg</p>
+              <p className="text-xl font-bold text-[var(--ink)]">
+                <AnimatedCounter value={48200} suffix=" kg" />
+              </p>
               <span className="text-[10px] text-[var(--accent)]">Residu Anorganik & Organik</span>
             </div>
             <div>
               <span className="text-[10px] uppercase text-[var(--muted)]">Eco-Paving Tercetak</span>
-              <p className="text-xl font-bold text-[var(--accent)]">12.400 Unit</p>
+              <p className="text-xl font-bold text-[var(--accent)]">
+                <AnimatedCounter value={12400} suffix=" Unit" />
+              </p>
               <span className="text-[10px] text-[var(--muted)]">Standar Mutu K-250</span>
             </div>
             <div>
               <span className="text-[10px] uppercase text-[var(--muted)]">Reduksi Emisi Karbon</span>
-              <p className="text-xl font-bold text-emerald-400">-38,5 Ton</p>
+              <p className="text-xl font-bold text-emerald-400">
+                <AnimatedCounter value={38.5} prefix="-" decimals={1} suffix=" Ton" />
+              </p>
               <span className="text-[10px] text-[var(--muted)]">Net CO2e Avoided</span>
             </div>
             <div>
               <span className="text-[10px] uppercase text-[var(--muted)]">Pohon Ditanam</span>
-              <p className="text-xl font-bold text-[var(--ink)]">2.850 Bibit</p>
+              <p className="text-xl font-bold text-[var(--ink)]">
+                <AnimatedCounter value={2850} suffix=" Bibit" />
+              </p>
               <span className="text-[10px] text-[var(--accent)]">Hasil Konversi Poin Warga</span>
             </div>
           </div>
