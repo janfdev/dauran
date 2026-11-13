@@ -6,27 +6,30 @@ import { AnatomyRig } from "@/components/anatomy-rig"
 export default function HomePage() {
   return (
     <div>
-      {/* ── HERO SECTION ── */}
-      <section className="hero relative flex min-h-[95svh] flex-col justify-between pt-[140px] pb-10">
-        <div className="hero-shade" />
+      {/* ── HERO SECTION (PERFECTLY CENTERED) ── */}
+      <section className="relative flex min-h-[96svh] flex-col justify-between items-center pt-[125px] pb-8 overflow-hidden">
+        {/* Ambient Gradient Glow */}
+        <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_50%_at_50%_45%,rgba(191,211,163,0.12),transparent_70%)]" />
+        <div className="hero-shade pointer-events-none" />
 
-        <div className="wrap relative z-10 text-center">
-          <p className="eyebrow flex items-center justify-center gap-2">
+        {/* Center Content Box */}
+        <div className="wrap relative z-10 my-auto flex flex-1 flex-col items-center justify-center text-center py-6">
+          <p className="eyebrow inline-flex items-center justify-center gap-2 rounded-full border border-[var(--line)] bg-[#0b241c]/60 px-4 py-1.5 backdrop-blur-xs">
             <span className="seed-dot" />
             00 / Inisiatif Desentralisasi Zero-Waste Nasional
           </p>
 
-          <h1 className="mt-6 font-serif text-[clamp(54px,8.5vw,120px)] leading-[0.92] tracking-[-0.04em] text-[var(--ink)]">
+          <h1 className="mt-7 font-serif text-[clamp(48px,8vw,115px)] leading-[0.92] tracking-[-0.04em] text-[var(--ink)]">
             <span>Ubah Residu Menjadi,</span>
             <em className="mt-2 block text-[var(--accent)] font-normal">Nilai Baru.</em>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-[620px] text-sm leading-relaxed text-[#c1cbc2] sm:text-base">
+          <p className="mx-auto mt-6 max-w-[640px] text-sm leading-relaxed text-[#c1cbc2] sm:text-base">
             Dauran adalah ekosistem ekonomi sirkular terpadu: mentransformasi timbunan limbah anorganik
             dan organik rumah tangga menjadi material rekayasa berkualitas tinggi, transparan, dan teruji laboratorium.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <a href="#spesimen" className="button">
               <span>Uji Spesimen 3D</span>
               <ArrowDown size={16} />
@@ -38,8 +41,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Live Telemetry Ticker */}
-        <div className="wrap relative z-10 mt-16 border-t border-[var(--line)] pt-6">
+        {/* Live Telemetry Ticker (Anchored at Bottom of Hero) */}
+        <div className="wrap relative z-10 w-full border-t border-[var(--line)] pt-5 pb-2">
           <div className="grid grid-cols-2 gap-4 text-left sm:grid-cols-4 font-mono">
             <div>
               <span className="text-[10px] uppercase text-[var(--muted)]">Limbah Terkelola</span>
